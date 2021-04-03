@@ -35,8 +35,8 @@ namespace Api.Domain.Models
             }
         }
 
-        private DateTime _updateAt;
-        public DateTime UpdateAt
+        private DateTime? _updateAt;
+        public DateTime? UpdateAt
         {
             get { return _updateAt; }
             set { _updateAt = value; }
