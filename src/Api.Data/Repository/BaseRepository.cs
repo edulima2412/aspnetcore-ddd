@@ -31,7 +31,7 @@ namespace Api.Data.Repository
                 if (item.Id == Guid.Empty)
                     item.Id = new Guid();
 
-                item.CreateAt = DateTime.Now;
+                item.CreateAt = DateTime.UtcNow;
                 _dataSet.Add(item);
 
                 await _context.SaveChangesAsync();
@@ -54,9 +54,26 @@ namespace Api.Data.Repository
             throw new NotImplementedException();
         }
 
-        public Task<T> UpdateAsync(T item)
+        public async Task<T> UpdateAsync(T item)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var result = await _dataSet.SingleOrDefaultAsync(p => p.Id.Equals(item.Id));
+                if (result == null)
+                    return null;
+
+                item.UpdateAt = DateTime.UtcNow;
+                item.CreateAt = result.CreateAt;
+
+                _context.Entry(result).CurrentValues.SetValues(item);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return item;
         }
     }
 }
