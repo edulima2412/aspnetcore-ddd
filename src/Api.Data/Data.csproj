@@ -20,4 +20,5 @@
   <ItemGroup>
     <ProjectReference Include="..\Api.Domain\Domain.csproj" />
   </ItemGroup>
+  
 </Project>

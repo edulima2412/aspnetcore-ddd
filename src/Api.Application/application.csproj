@@ -4,5 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Api.Domain\Domain.csproj" />
+    <ProjectReference Include="..\Api.Service\Service.csproj" />
+    <ProjectReference Include="..\Api.CrossCutting\CrossCutting.csproj" />
+  </ItemGroup>
 
 </Project>
