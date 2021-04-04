@@ -23,7 +23,11 @@
       "launchUrl": "swagger",
       "applicationUrl": "http://localhost:5000",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "DB_CONNECT_SQL": "Server=localhost\\SQLEXPRESS; Database=db-api; Trusted_Connection=true; User ID=sa; Password=admin123",
+        "DB_CONNECT_MYSQL": "Server=localhost;Port=3306;Database=dbAPI;Uid=root;Pwd=admin123",
+        "DATABASE": "SQLSERVER",
+        "MIGRATION": "APLICAR"
       }
     }
   }
