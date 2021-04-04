@@ -2,7 +2,6 @@ using System;
 using Api.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Xunit;
 
 namespace Api.Data.Test
 {
@@ -23,7 +22,7 @@ namespace Api.Data.Test
         {
             var serviceCollection = new ServiceCollection();
             serviceCollection.AddDbContext<MyContext>(o =>
-                o.UseSqlServer($"Server=localhost; Database={dataBaseName}; Trusted_Connection=true; User ID=sa; Password=admin123"),
+                o.UseSqlServer($"Server=localhost\\SQLEXPRESS; Database={dataBaseName}; Trusted_Connection=true; User ID=sa; Password=admin123"),
                     ServiceLifetime.Transient
             );
 
