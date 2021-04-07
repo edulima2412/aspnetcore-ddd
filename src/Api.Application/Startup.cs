@@ -20,15 +20,27 @@ namespace Application
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public IWebHostEnvironment _environment { get; }
+        public IConfiguration Configuration { get; }
+
+        public Startup(IConfiguration configuration, IWebHostEnvironment environment)
         {
+            _environment = environment;
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
+            if (_environment.IsEnvironment("Testing"))
+            {
+                Environment.SetEnvironmentVariable("DB_CONNECT_SQL", "Persist Security Info=True;Server=localhost\\SQLEXPRESS; Database=db-api-integration; Trusted_Connection=true; User ID=sa; Password=admin123");
+                Environment.SetEnvironmentVariable("DATABASE", "SQLSERVER");
+                Environment.SetEnvironmentVariable("MIGRATION", "APLICAR");
+                Environment.SetEnvironmentVariable("Audience", "TesteAudience");
+                Environment.SetEnvironmentVariable("Issuer", "TesteIssuer");
+                Environment.SetEnvironmentVariable("Seconds", "28800");
+            }
             services.AddControllers();
 
             ConfigureService.ConfigureDependenciesService(services);

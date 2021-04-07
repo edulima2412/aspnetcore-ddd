@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Service.Test", "Api.Ser
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Application.Test", "Api.Application.Test\Api.Application.Test.csproj", "{72764DC8-38DE-496C-993E-89A416453093}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Integration.Test", "Api.Integration.Test\Api.Integration.Test.csproj", "{A8988B89-2337-4A2F-A7E2-30B4F256107D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -128,5 +130,17 @@ Global
 		{72764DC8-38DE-496C-993E-89A416453093}.Release|x64.Build.0 = Release|Any CPU
 		{72764DC8-38DE-496C-993E-89A416453093}.Release|x86.ActiveCfg = Release|Any CPU
 		{72764DC8-38DE-496C-993E-89A416453093}.Release|x86.Build.0 = Release|Any CPU
+		{A8988B89-2337-4A2F-A7E2-30B4F256107D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8988B89-2337-4A2F-A7E2-30B4F256107D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8988B89-2337-4A2F-A7E2-30B4F256107D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A8988B89-2337-4A2F-A7E2-30B4F256107D}.Debug|x64.Build.0 = Debug|Any CPU
+		{A8988B89-2337-4A2F-A7E2-30B4F256107D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A8988B89-2337-4A2F-A7E2-30B4F256107D}.Debug|x86.Build.0 = Debug|Any CPU
+		{A8988B89-2337-4A2F-A7E2-30B4F256107D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8988B89-2337-4A2F-A7E2-30B4F256107D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8988B89-2337-4A2F-A7E2-30B4F256107D}.Release|x64.ActiveCfg = Release|Any CPU
+		{A8988B89-2337-4A2F-A7E2-30B4F256107D}.Release|x64.Build.0 = Release|Any CPU
+		{A8988B89-2337-4A2F-A7E2-30B4F256107D}.Release|x86.ActiveCfg = Release|Any CPU
+		{A8988B89-2337-4A2F-A7E2-30B4F256107D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
