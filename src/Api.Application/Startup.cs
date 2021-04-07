@@ -20,19 +20,19 @@ namespace Application
 {
     public class Startup
     {
-        public IWebHostEnvironment _environment { get; }
+        public IWebHostEnvironment _env { get; }
         public IConfiguration Configuration { get; }
 
-        public Startup(IConfiguration configuration, IWebHostEnvironment environment)
+        public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
-            _environment = environment;
+            _env = env;
             Configuration = configuration;
         }
 
 
         public void ConfigureServices(IServiceCollection services)
         {
-            if (_environment.IsEnvironment("Testing"))
+            if (_env.IsEnvironment("Testing"))
             {
                 Environment.SetEnvironmentVariable("DB_CONNECT_SQL", "Persist Security Info=True;Server=localhost\\SQLEXPRESS; Database=db-api-integration; Trusted_Connection=true; User ID=sa; Password=admin123");
                 Environment.SetEnvironmentVariable("DATABASE", "SQLSERVER");
@@ -61,12 +61,6 @@ namespace Application
             #region Configuration Token
             var signingConfigurations = new SigningConfigurations();
             services.AddSingleton(signingConfigurations);
-
-            var tokenConfigurations = new TokenConfigurations();
-            new ConfigureFromConfigurationOptions<TokenConfigurations>(
-                Configuration.GetSection("TokenConfigurations"))
-                    .Configure(tokenConfigurations);
-            services.AddSingleton(tokenConfigurations);
             #endregion
 
             #region Configuration Authentication and Authorization
@@ -78,8 +72,8 @@ namespace Application
             {
                 var paramsValidation = bearerOptions.TokenValidationParameters;
                 paramsValidation.IssuerSigningKey = signingConfigurations.Key;
-                paramsValidation.ValidAudience = tokenConfigurations.Audience;
-                paramsValidation.ValidIssuer = tokenConfigurations.Issuer;
+                paramsValidation.ValidAudience = Environment.GetEnvironmentVariable("Audience");
+                paramsValidation.ValidIssuer = Environment.GetEnvironmentVariable("Issuer");
                 paramsValidation.ValidateIssuerSigningKey = true;
                 paramsValidation.ValidateLifetime = true;
                 paramsValidation.ClockSkew = TimeSpan.Zero;
