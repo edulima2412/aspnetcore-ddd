@@ -23,4 +23,8 @@
     <ProjectReference Include="..\Api.Domain\Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Cep\" />
+  </ItemGroup>
+
 </Project>
