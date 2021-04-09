@@ -5,8 +5,6 @@ using Api.Domain.Models;
 using Api.Domain.Repository;
 using AutoMapper;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Service.Services
