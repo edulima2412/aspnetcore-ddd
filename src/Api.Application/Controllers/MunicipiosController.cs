@@ -67,8 +67,8 @@ namespace Application.Controllers
 
         [Authorize("Bearer")]
         [HttpGet]
-        [Route("{idMunicipio}")]
-        public async Task<ActionResult> GetCompletoById(Guid idMunicipio)
+        [Route("Complete/{id}")]
+        public async Task<ActionResult> GetCompletoById(Guid id)
         {
             if (!ModelState.IsValid)
             {
@@ -77,7 +77,7 @@ namespace Application.Controllers
 
             try
             {
-                var result = await _service.GetCompletoById(idMunicipio);
+                var result = await _service.GetCompletoById(id);
                 if (result == null)
                 {
                     return NotFound();
@@ -127,7 +127,7 @@ namespace Application.Controllers
             try
             {
                 var result = await _service.Post(dtoCreate);
-                if (result == null)
+                if (result != null)
                 {
                     return Created(new Uri(Url.Link("GetMunicipioId", new { id = result.Id })), result);
                 }
