@@ -8,9 +8,9 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Service.Services
+namespace Api.Service.Services
 {
-    class MunicipioService : IMunicipioService
+    public class MunicipioService : IMunicipioService
     {
         private readonly IMunicipioRepository _repository;
         private readonly IMapper _mapper;

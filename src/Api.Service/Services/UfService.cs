@@ -6,9 +6,9 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Service.Services
+namespace Api.Service.Services
 {
-    class UfService : IUfService
+    public class UfService : IUfService
     {
         private readonly IUfRepository _repository;
         private readonly IMapper _mapper;

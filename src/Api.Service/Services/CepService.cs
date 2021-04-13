@@ -7,9 +7,9 @@ using AutoMapper;
 using System;
 using System.Threading.Tasks;
 
-namespace Service.Services
+namespace Api.Service.Services
 {
-    class CepService : ICepService
+    public class CepService : ICepService
     {
         private readonly ICepRepository _repository;
         private readonly IMapper _mapper;
