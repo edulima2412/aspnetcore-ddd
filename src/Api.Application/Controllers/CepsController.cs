@@ -3,12 +3,10 @@ using Api.Domain.Interfaces.Services.Cep;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace Application.Controllers
+namespace Api.Application.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

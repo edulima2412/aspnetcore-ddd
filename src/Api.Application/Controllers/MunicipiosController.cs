@@ -8,7 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace Application.Controllers
+namespace Api.Application.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -154,7 +154,7 @@ namespace Application.Controllers
             try
             {
                 var result = await _service.Put(dtoUpdate);
-                if (result == null)
+                if (result != null)
                 {
                     return Ok(result);
                 }
