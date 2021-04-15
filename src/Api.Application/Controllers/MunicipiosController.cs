@@ -3,8 +3,6 @@ using Api.Domain.Interfaces.Services.Municipio;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 
@@ -92,7 +90,7 @@ namespace Api.Application.Controllers
 
         [Authorize("Bearer")]
         [HttpGet]
-        [Route("{codIBGE}")]
+        [Route("byIBGE/{codIBGE}")]
         public async Task<ActionResult> GetCompletoByIBGE(int codIBGE)
         {
             if (!ModelState.IsValid)
