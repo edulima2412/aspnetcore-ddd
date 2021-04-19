@@ -1,5 +1,4 @@
 ﻿using Api.Domain.Dtos.Municipio;
-using Api.Domain.Dtos.Uf;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
