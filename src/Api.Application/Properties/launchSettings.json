@@ -1,0 +1,44 @@
+﻿{
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:29994",
+      "sslPort": 0
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "DB_CONNECT_SQL": "Persist Security Info=True;Server=localhost\\SQLEXPRESS; Database=db-api; Trusted_Connection=true; User ID=sa; Password=admin123",
+        "DB_CONNECT_MYSQL": "Server=localhost;Port=3306;Database=dbAPI;Uid=root;Pwd=admin123",
+        "DATABASE": "SQLSERVER",
+        "MIGRATION": "APLICAR",
+        "Audience": "TesteAudience",
+        "Issuer": "TesteIssuer",
+        "Seconds": "28800"
+      }
+    },
+    "application": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "applicationUrl": "http://localhost:5000",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "DB_CONNECT_SQL": "Persist Security Info=True;Server=localhost\\SQLEXPRESS; Database=db-api; Trusted_Connection=true; User ID=sa; Password=admin123",
+        "DB_CONNECT_MYSQL": "Server=localhost;Port=3306;Database=dbAPI;Uid=root;Pwd=admin123",
+        "DATABASE": "SQLSERVER",
+        "MIGRATION": "APLICAR",
+        "Audience": "TesteAudience",
+        "Issuer": "TesteIssuer",
+        "Seconds": "28800"
+      }
+    }
+  }
+}
